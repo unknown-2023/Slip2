@@ -1,0 +1,31 @@
+Write a Java Program to implement Singleton pattern for multithreading
+
+import java.lang.*;
+class ThreadSafeSingleton extends Thread
+{
+  //Thread Safe Singleton
+
+  private static ThreadSafeSingleton instance;
+  private ThreadSafeSingleton()
+  {
+        System.out.println("Singleton object created using Threads Synchronized Method");
+ }
+
+  //Making the getInstance method as synchronized
+  public static synchronized ThreadSafeSingleton getInstance()
+  {
+    if(instance == null)
+    {
+      instance = new ThreadSafeSingleton();
+    }
+    return instance;
+  }
+}
+class Slip2
+{
+    public static void main(String args[])
+    {
+        ThreadSafeSingleton ob=ThreadSafeSingleton.getInstance();
+
+    }
+}
