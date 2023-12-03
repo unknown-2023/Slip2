@@ -3,90 +3,106 @@ save file as employee.html --> change css file as your wish --> run in chrome
 
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Employee Registration Form</title>
-  <style>
-   body {
-      font-family: Arial, sans-serif;
-      background-color: #f0f0f0;
-      text-align: center;
-    }
-h1 {
-color: #333;
-    }
-    form {
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-      width: 300px;
-      margin: 0 auto;
-    }
-    label {
-      display: block;
-      margin-bottom: 5px;
-      color: #333;
-    }
-    input[type="text"],
-    input[type="password"] {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 3px;
-    }
-    .submit-container {
-      text-align: center;
-    }
-    input[type="submit"] {
-      background-color: #007BFF;
-      color: #fff;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 3px;
-      cursor: pointer;
-    }
-  </style>
-</head>
-  </style>
-</head>
-<body>
-  <h1>Employee Registration</h1>
-  <form id="registrationForm" onsubmit="return validateForm()">
-    <label for="firstName">First Name:</label>
-    <input type="text" id="firstName" name="firstName" required><br>
-    <label for="lastName">Last Name:</label>
-    <input type="text" id="lastName" name="lastName" required><br>
-    <label for="dob">Date of Birth:</label>
-    <input type="date" id="dob" name="dob" required><br>
-    <label for="joiningDate">Joining Date:</label>
-    <input type="date" id="joiningDate" name="joiningDate" required><br>
-    <label for="salary">Salary:</label>
-    <input type="number" id="salary" name="salary" required><br>
-    <div class="submit-container">
-      <input type="submit" value="Submit">
-    </div>
-  </form>
-  <script>
 
-    function validateForm() {
-      const dob = new Date(document.getElementById('dob').value);
-      const joiningDate = new Date(document.getElementById('joiningDate').value);
-      const salary = parseInt(document.getElementById('salary').value);
-      if (isNaN(dob) || dob >= new Date() || dob === "Invalid Date") {
-        alert('Please enter a valid Date of Birth.');
-        return false;
-      }
-      if (isNaN(joiningDate) || joiningDate >= new Date() || joiningDate === "Invalid Date") {
-        alert('Please enter a valid Joining Date.');
-        return false;
-      }
-      if (isNaN(salary) || salary <= 0) {
-        alert('Please enter a valid salary greater than 0.');
-        return false;
-      }
-      return true;
-    }
-  </script>
+<head>
+    <title>Employee Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="date"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+
+        .submit-container {
+            text-align: center;
+        }
+
+        input[type="submit"] {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Employee Registration</h1>
+    <form id="registrationForm" onsubmit="return validateForm()">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required><br>
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" required><br>
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required><br>
+        <label for="joiningDate">Joining Date:</label>
+        <input type="date" id="joiningDate" name="joiningDate" required><br>
+        <label for="salary">Salary:</label>
+        <input type="number" id="salary" name="salary" required><br>
+        <div class="submit-container">
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+    <script>
+        function validateForm() {
+            const dob = new Date(document.getElementById('dob').value);
+            const joiningDate = new Date(document.getElementById('joiningDate').value);
+            const salary = parseInt(document.getElementById('salary').value);
+            if (isNaN(dob) || dob >= new Date() || dob === "Invalid Date") {
+                alert('Please enter a valid Date of Birth.');
+                return false;
+            }
+            if (isNaN(joiningDate) || joiningDate >= new Date() || joiningDate === "Invalid Date") {
+                alert('Please enter a valid Joining Date.');
+                return false;
+            }
+            if (isNaN(salary) || salary <= 0) {
+                alert('Please enter a valid salary greater than 0.');
+                return false;
+            }
+            return true;
+        }
+    </script>
 </body>
+
 </html>
+
